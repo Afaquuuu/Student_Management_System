@@ -1,0 +1,53 @@
+Student Management System - Setup Instructions
+==============================================
+
+Follow these steps to run the project on your local machine using XAMPP:
+
+1. Folder Placement:
+   - Copy the entire 'Web_project' folder.
+   - Go to your XAMPP installation directory (usually C:\xampp).
+   - Open the 'htdocs' folder.
+   - Paste the 'Web_project' folder here.
+   - Path should be: C:\xampp\htdocs\Web_project
+
+2. Start XAMPP:
+   - Open the XAMPP Control Panel.
+   - Click 'Start' for Apache.
+   - Click 'Start' for MySQL.
+
+3. Database Setup:
+   - Open your web browser and go to: http://localhost/phpmyadmin/
+   - Click on the 'SQL' tab at the top.
+   - Open the 'database.sql' file from the project folder in a text editor.
+   - Copy all the SQL code and paste it into the SQL box in phpMyAdmin.
+   - Click 'Go' to execute the queries. This will create the database 'student_management' and the required tables.
+   - If you already created the old database before these updates, run these extra SQL lines once:
+     ALTER TABLE students ADD COLUMN status ENUM('Active','Inactive','Graduated') NOT NULL DEFAULT 'Active' AFTER phone;
+     ALTER TABLE students ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP AFTER created_at;
+     ALTER TABLE students ADD UNIQUE KEY unique_student_email (email);
+
+4. Run the Project:
+   - In your browser, go to: http://localhost/Web_project/index.php
+   - You can now see the Home page.
+
+5. Admin Login:
+   - To manage students, go to the 'Admin Login' page.
+   - Username: admin
+   - Password: admin123
+
+Project Structure:
+- index.php: The home page.
+- header.php: Contains the navigation bar and CSS links (included in all pages).
+- footer.php: Contains the footer section (included in all pages).
+- db_config.php: Handles the connection to the MySQL database.
+- register.php: Form to add new students.
+- view_students.php: Table to display, search, filter, export, and manage students.
+- student_details.php: Profile page for one student record.
+- edit_student.php: Form to update student details.
+- delete_student.php: POST-only script to safely remove a student.
+- export_students.php: Downloads student records as a CSV file.
+- login.php: Admin authentication page.
+- logout.php: Ends the admin session.
+- style.css: All the styling for the website.
+- script.js: Basic JavaScript validations.
+- database.sql: SQL script to set up the database.
