@@ -22,5 +22,5 @@ CREATE TABLE IF NOT EXISTS admin (
 );
 
 -- Default admin: username is admin and password is admin123.
-INSERT INTO admin (username, password) VALUES ('admin', '$2y$10$rTvzJwQA./uvYiJHZ1vUvOzs.EsqkJXvRrcaSQ2cBqavVVCt/LssS')
+INSERT INTO admin (username, password) VALUES ('admin', 'admin123')
 ON DUPLICATE KEY UPDATE username = username;

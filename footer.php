@@ -4,7 +4,7 @@
                 <h3>Contact Info</h3>
                 <div class="contact-item">
                     <span class="icon" aria-hidden="true">@</span>
-                    <a href="mailto:saasali799@gmail.com">saasali799@gmail.com</a>
+                    <a href="mailto:saasali799@gmail.com">studentmanagement@gmail.com</a>
                 </div>
                 <div class="contact-item">
                     <span class="icon" aria-hidden="true">tel</span>

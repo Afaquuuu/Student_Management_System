@@ -1,13 +1,12 @@
 <?php
-// Session setup: keep session files inside the project so it works smoothly on local setups.
-$session_path = __DIR__ . '/sessions';
-if (!file_exists($session_path)) {
-    mkdir($session_path, 0777, true);
-}
-session_save_path($session_path);
-
 // Only start a session if PHP has not already started one on this request.
 if (session_status() === PHP_SESSION_NONE) {
+    // Session setup: keep session files inside the project so it works smoothly on local setups.
+    $session_path = __DIR__ . '/sessions';
+    if (!file_exists($session_path)) {
+        mkdir($session_path, 0777, true);
+    }
+    session_save_path($session_path);
     session_start();
 }
 
