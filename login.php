@@ -30,8 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result && $result->num_rows == 1) {
         $row = $result->fetch_assoc();
         
-        // Check if the password matches the hash
-        if (password_verify($password, $row['password'])) {
+        // Check if the password matches
+        if ($password === $row['password']) {
             
             // Set session variables to keep the admin logged in
             $_SESSION['admin_logged_in'] = true;
